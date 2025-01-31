@@ -1,10 +1,17 @@
+import FourthPage from "./pages/FourthPage";
 import Homepage from "./pages/Homepage";
+import SecondPage from "./pages/SecondPage";
+import ThirdPage from "./pages/ThirdPage";
 
 const App = () => {
   return (
-    <div className="">
+    <div className="bg-purple-200 overflow-x-hidden">
       <Homepage />
-      <div className="h-[100dvh] bg-black">s</div>
+      <section className="h-[20rem]" />
+      <SecondPage />
+      <ThirdPage />
+      <section className="h-[20rem]" />
+      <FourthPage />
     </div>
   );
 };

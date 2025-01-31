@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/all";
 // ✅ Correct Plugin Registration
 gsap.registerPlugin(ScrollTrigger);
 
-function FirstPage() {
+function FifthPage() {
   const containerRef = useRef(null);
   const leftCardsRef = useRef([]);
   const rightCardsRef = useRef([]);
@@ -177,4 +177,4 @@ function FirstPage() {
   );
 }
 
-export default FirstPage;
+export default FifthPage;

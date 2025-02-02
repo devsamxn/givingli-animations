@@ -1,10 +1,11 @@
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import PhoneSlider from "../pages-help/PhoneSlider";
 gsap.registerPlugin(ScrollTrigger);
 
-const Homepage = () => {
+const Homepage = ({ changeBgColor }) => {
   const layersRef = useRef([]);
   const containerRef = useRef(null);
   const iphoneRef = useRef(null);
@@ -55,6 +56,29 @@ const Homepage = () => {
   //   },
   //   { scope: layersRef }
   // );
+  const [bgImage, setBgImage] = useState([
+    `/temp/carousel1icon1.png`,
+    `/temp/carousel1icon2.png`,
+  ]);
+  function handleBgChange(ind = 0) {
+    console.log(ind);
+    setBgImage([
+      `/temp/carousel${ind + 1}icon1.png`,
+      `/temp/carousel${ind + 1}icon2.png`,
+    ]);
+  }
+  useGSAP(() => {
+    gsap.set(layersRef.current, { opacity: 0 });
+  }, []);
+  useGSAP(() => {
+    gsap.to(layersRef.current, {
+      opacity: 1, // Fully visible
+      scale: 1.5, // Grows to normal size
+      duration: 0.6,
+      ease: "power2.out",
+      stagger: 0.2, // Icons appear one by one
+    });
+  });
 
   useGSAP(() => {
     gsap.to(layersRef.current[0], {
@@ -104,7 +128,7 @@ const Homepage = () => {
     gsap.from(layersRef.current[4], {
       xPercent: "180",
       yPercent: "70",
-      scale: 1.6,
+      scale: 1.5,
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
@@ -192,7 +216,7 @@ const Homepage = () => {
 
   return (
     <div
-      className="relative h-[100dvh] flex items-center justify-center"
+      className="relative h-[100dvh] flex items-center justify-center overflow-hidden "
       ref={containerRef}
     >
       <img
@@ -207,23 +231,23 @@ const Homepage = () => {
       />
       <img
         ref={(el) => (layersRef.current[2] = el)}
-        src="/logo-1.png"
+        src="/logo-3.png"
         className="layer absolute size-36 bottom-[5rem] left-40"
       />
       <img
         ref={(el) => (layersRef.current[3] = el)}
-        src="/logo-2.png"
+        src="/logo-3.png"
         className="layer absolute size-36 bottom-[6rem] right-40"
       />
       <img
         ref={(el) => (layersRef.current[4] = el)}
-        src="/logo-3.png"
-        className="z-10 layer absolute size-36 top-[13rem] left-1/2 -translate-x-1/2"
+        src={bgImage[0]}
+        className="z-10 layer absolute size-32 top-[11rem] left-1/2 -translate-x-1/2"
       />
       <img
         ref={(el) => (layersRef.current[5] = el)}
-        src="/logo-3.png"
-        className="z-10 layer absolute size-36 top-[23rem] left-1/2 -translate-x-1/2"
+        src={bgImage[1]}
+        className="z-10 layer absolute size-32 top-[20rem] left-1/2 -translate-x-1/2"
       />
       <img
         ref={(el) => (layersRef.current[6] = el)}
@@ -239,33 +263,44 @@ const Homepage = () => {
 
       <div
         ref={textRef}
-        className="absolute top-[12rem] text-lg opacity-0 font-playfair flex-col text-center leading-tight font-extrabold"
+        className="absolute top-[12rem] text-lg opacity-0 font-playfair flex-col text-center leading-tight font-extrabold flex items-center "
       >
-        <div>
+        <div className="">
           <p>Gift</p>
           <p>More</p>
           <p>Smiles</p>
         </div>
-        <div className="z-50 h-[0.8rem] w-[3rem] rounded-xl bg-blue-500 transition duration-300 ease-in-out hover:bg-gray-400 cursor-pointer flex justify-center text-[5px] p-1 text-white">
+        <div className="z-50 h-[0.8rem] w-[3rem] rounded-xl transition duration-1000  ease-in-out hover:bg-gray-500 mix-blend-overlay bg-black cursor-pointer flex justify-center text-[5px] p-1 text-white uppercase">
           Gift Someone
         </div>
       </div>
       <div
         ref={(el) => (hTextRef.current[0] = el)}
-        className="absolute top-[12rem] left-[15rem] text-5xl opacity-0 font-playfair italic flex-col leading-tight space-y-0 font-extrabold w-[15rem]"
+        className="absolute top-[12rem] left-[10rem] text-5xl opacity-0 font-playfair flex-col leading-tight space-y-0 font-extrabold w-[25rem] text-balance tracking-wide"
       >
         <p>We make gifting and celebrating better.</p>
       </div>
       <div
         ref={(el) => (hTextRef.current[1] = el)}
-        className="absolute top-[13rem] right-[10rem] text-4xl opacity-0 font-playfair italic flex-col leading-tight space-y-0 font-extrabold w-[20rem]"
+        className="absolute top-[12rem] right-[10rem] text-3xl opacity-0 font-playfair flex-col leading-tight space-y-0 font-extrabold w-[20rem] text-balance tracking-wide"
       >
         <p>
-          So you can show up for every meaningful occasion, milestone, and
+          So you can show up for every meaningful occasion,milestone, and
           moment.
         </p>
       </div>
-      <img ref={iphoneRef} src="/iphone.png" className="absolute h-[55rem]" />
+      <div
+        ref={iphoneRef}
+        className="absolute bg-[url('iphone.png')] h-[38rem] w-[19rem] bg-cover overflow-hidden"
+      >
+        <div className="absolute h-[70%] w-[80%] top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/2 gap-2">
+          <PhoneSlider
+            handleBgChange={handleBgChange}
+            changeBgColor={changeBgColor}
+          />
+        </div>
+        {/* <div className="absolute bottom-6 h-[3.5rem] w-[82%] bg-black rounded-[2rem] left-1/2 -translate-x-1/2" /> */}
+      </div>
     </div>
   );
 };

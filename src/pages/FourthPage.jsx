@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import GiftCardSelector from "../pages-help/Gift";
 
 // ✅ Correct Plugin Registration
 gsap.registerPlugin(ScrollTrigger);
@@ -31,7 +32,7 @@ function FourthPage() {
             start: "top bottom",
             end: "bottom top",
             scrub: true,
-            markers: true,
+            // markers: true,
           },
         });
       });
@@ -46,7 +47,7 @@ function FourthPage() {
             start: "top bottom",
             end: "bottom top",
             scrub: true,
-            markers: true,
+            // markers: true,
           },
         });
       });
@@ -58,7 +59,7 @@ function FourthPage() {
           start: "top bottom",
           end: "bottom top",
           scrub: true,
-          markers: true,
+          // markers: true,
         },
       });
       gsap.to(rightHCardRef.current, {
@@ -69,7 +70,7 @@ function FourthPage() {
           start: "top bottom",
           end: "bottom top",
           scrub: true,
-          markers: true,
+          // markers: true,
         },
       });
     },
@@ -81,13 +82,23 @@ function FourthPage() {
       ref={containerRef}
       className="relative h-screen flex flex-col items-center justify-center"
     >
-      {/* ✅ Center Black Card */}
-      <h1 className="font-playfair text-[4.5rem] h-full -mt-[13rem] flex flex-col leading-tight text-center font-extrabold">
+      <h1 className="font-playfair text-[4rem] h-full -mt-[18rem] flex flex-col leading-tight text-center font-extrabold">
         <p>Givingli</p>
         <p className="-mt-4">Cash</p>
       </h1>
-      <div className="absolute bg-[url('/iphone.png')] bg-cover bg-center h-[60rem] w-[20rem] rounded-2xl z-50" />
-      ✅ Moving Cards
+      <div className="absolute bg-[url('/iphone.png')] bg-cover bg-center h-[40rem] w-[20rem] rounded-2xl z-50"></div>
+      <img
+        src="/fourthPage.svg"
+        className="h-[38rem] w-[28rem] z-40 top-12 absolute rounded-[9rem]"
+      />
+      <img
+        src="givingiCard.png"
+        className="h-[25%] w-[15dvw] z-50 absolute top-[20dvh]"
+      />
+      <div className="bg-transparent absolute bottom-[20dvh] w-[15dvw] h-[60dvh] z-50 overflow-hidden">
+        <GiftCardSelector />
+      </div>
+
       {/* {[
         ["bg-red-500", "-35deg", "left"],
         ["bg-pink-500", "35deg", "left"],

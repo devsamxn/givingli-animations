@@ -60,8 +60,14 @@ function FourthBox() {
   return (
     <div
       ref={fourthMainBox}
-      className="relative bg-yellow-500 col-span-2 row-span-1 h-full w-full rounded-3xl overflow-hidden"
+      className="relative bg-orange-400 bg-opacity-50 bg-blend-normal col-span-2 row-span-1 h-full w-full rounded-3xl overflow-hidden"
     >
+      <div className="absolute left-0 bottom-0 m-5 w-[15rem] flex flex-col gap-1 text-orange-900">
+        <h1 className="font-playfair text-3xl font-bold">Send Gifts</h1>
+        <p className="font-semibold">
+          Send as a group with friends or individually
+        </p>
+      </div>
       <div
         ref={fourthSubBox}
         className="absolute bg-transparent h-[25rem] w-[28rem] right-0 top-0 -mt-[4rem] grid grid-cols-3 gap-4"

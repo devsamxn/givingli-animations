@@ -65,9 +65,9 @@ const FirstBox = () => {
   return (
     <div
       ref={firstBox}
-      className="firstSubBox relative bg-purple-300 col-span-1 row-span-2 h-full w-full rounded-3xl"
+      className="firstSubBox relative bg-purple-300 col-span-1 row-span-2 h-full w-full rounded-3xl bg-opacity-50 bg-blend-color"
     >
-      <h1 className="absolute top-[2dvh] text-4xl font-playfair ml-[3dvh] font-bold text-purple-800">
+      <h1 className="absolute top-[2dvh] text-3xl font-playfair ml-[3dvh] font-bold text-purple-900">
         Customization
       </h1>
       <div className="relative mt-10">
@@ -80,13 +80,13 @@ const FirstBox = () => {
           className="firstSubBox2 absolute bg-[url('/firstBox2.webp')] bg-cover bg-center h-[15rem] w-[10rem] top-10 left-36"
         />
       </div>
-      <div className="-ml-5 absolute bg-purple-300 bottom-[5rem] h-[5rem] w-full rounded-2xl overflow-hidden">
+      <div className="-ml-5 absolute bg-purple-300 bottom-[7rem] h-[5rem] w-full rounded-2xl overflow-hidden">
         <div
           ref={firstSubBox3}
           className="firstSubBox3 h-full w-[30rem] bg-white bg-[url(/banner.svg)]"
         />
       </div>
-      <p className="absolute bottom-5 text-purple-800 font-bold mx-5 font-playfair text-md tracking-tight">
+      <p className="absolute bottom-6 text-purple-900 font-semibold mx-4 text-md text-balance tracking-tight">
         Use a pre-designed template or personalize with video, stickers, fonts,
         and more
       </p>

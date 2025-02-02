@@ -95,8 +95,14 @@ function ThirdBox() {
     <div className="col-span-2 row-span-1 h-full w-full grid grid-cols-2 gap-5">
       <div
         ref={thirdBox1}
-        className="thirdBox1 relative bg-green-300 h-full w-full rounded-3xl"
+        className="thirdBox1 relative bg-green-400 h-full w-full rounded-3xl bg-opacity-50 bg-blend-color"
       >
+        <div className="absolute bottom-0 left-0 py-5 px-10 flex flex-col gap-1 text-green-900 ">
+          <h1 className="text-3xl font-bold font-playfair">Wallet</h1>
+          <p className="font-semibold">
+            Access all your gifts and save up your Givingli Cash
+          </p>
+        </div>
         <div
           ref={thirdSubBox1}
           className="thirdSubBox1 z-40 absolute w-[16rem] h-[6rem] rounded-2xl left-1/2 -translate-x-1/2 top-[3.5rem] bg-[url('/thirdBox1.svg')] bg-cover"
@@ -116,8 +122,14 @@ function ThirdBox() {
       </div>
       <div
         ref={thirdBox2}
-        className="relative bg-pink-500 h-full w-full rounded-3xl overflow-y-hidden"
+        className="relative bg-yellow-400 h-full w-full rounded-3xl overflow-y-hidden bg-opacity-50 bg-blend-color"
       >
+        <div className="absolute top-0 left-0 mx-10 w-[80%] mt-5 flex flex-col gap-1 text-yellow-900">
+          <h1 className="font-playfair text-3xl font-bold">Inbox</h1>
+          <p className="font-semibold">
+            Track your gifts, group chats, and sent cards.
+          </p>
+        </div>
         <div
           ref={thirdSubBox5}
           className="absolute z-50 h-[10rem] w-[16rem] bottom-0 left-1/2 transform -translate-x-1/2 -mb-7 rounded-2xl overflow-y-hidden"

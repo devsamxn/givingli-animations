@@ -7,7 +7,7 @@ import FourthPage from "./FourthPage";
 
 const SecondPage = () => {
   return (
-    <div className="grid grid-cols-3 grid-rows-3 h-[53rem] w-screen bg-gray-200 gap-5 px-[15rem]">
+    <div className="grid grid-cols-3 grid-rows-3 h-[53rem] w-screen gap-5 px-[15rem]">
       <FirstBox />
       <SecondBox />
       <ThirdBox />

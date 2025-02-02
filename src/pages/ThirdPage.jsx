@@ -12,12 +12,12 @@ function ThirdPage() {
     if (!images.length) return; // Prevent errors if images are not loaded
 
     // Set initial positions (centered on top of each other)
-    // gsap.set(images, {
-    //   x: 0,
-    //   y: 0,
-    //   scale: 1,
-    //   opacity: 1,
-    // });
+    gsap.set(images, {
+      x: 0,
+      y: 0,
+      scale: 1,
+      opacity: 1,
+    });
 
     // Create GSAP timeline for smooth animations
     const tl = gsap.timeline({
@@ -27,7 +27,7 @@ function ThirdPage() {
         end: "+=1000", // Animation lasts for 2000px scroll distance
         scrub: true,
         pin: true, // **Pins the section so animation is fully visible**
-        markers: true, // Set to `true` to debug scroll positions
+        // markers: true, // Set to `true` to debug scroll positions
       },
     });
 

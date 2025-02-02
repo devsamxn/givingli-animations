@@ -50,7 +50,7 @@ const SecondBox = () => {
   return (
     <div
       ref={secondBox}
-      className="secondBox relative bg-pink-400 col-span-2 row-span-1 h-full w-full rounded-3xl "
+      className="secondBox relative bg-pink-400 col-span-2 row-span-1 h-full w-full rounded-3xl bg-opacity-50 bg-blend-color"
     >
       <div
         ref={secondSubBox1}
@@ -61,10 +61,10 @@ const SecondBox = () => {
         className="secondBox2 z-40 absolute h-[15rem] w-[15rem] rounded-2xl right-2 bg-[url(/secondBox2.svg)] bg-cover bg-center"
       />
       <div className="absolute bottom-5 ml-5">
-        <h1 className="text-4xl font-playfair font-extrabold text-pink-900">
+        <h1 className="text-3xl font-playfair font-extrabold text-pink-900">
           Scheduling
         </h1>
-        <p className="w-[50dvh] text-xl mt-2">
+        <p className="w-[50dvh] text-xl mt-2 text-pink-900 font-semibold text-balance">
           Schedule all your cards and gifts now and we'll send them later
         </p>
       </div>

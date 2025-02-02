@@ -29,6 +29,10 @@ function FifthBox() {
       ref={fifthBox}
       className="relative bg-blue-200 col-span-1 row-span-1 rounded-3xl overflow-hidden"
     >
+      <div className="m-4 flex flex-col gap-1 text-blue-900">
+        <h1 className="text-3xl font-bold font-playfair">Reminders</h1>
+        <p className="font-semibold">Never miss a birthday again</p>
+      </div>
       <img
         ref={fifthSubBox1}
         className="absolute size-[18rem] right-0 bottom-0

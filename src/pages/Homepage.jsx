@@ -69,6 +69,7 @@ const Homepage = ({ changeBgColor }) => {
   }
   useGSAP(() => {
     gsap.set(layersRef.current, { opacity: 0 });
+    gsap.set(iphoneRef.current, { x: 0, y: 0 });
   }, []);
   useGSAP(() => {
     gsap.to(layersRef.current, {

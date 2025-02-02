@@ -243,12 +243,12 @@ const Homepage = ({ changeBgColor }) => {
       <img
         ref={(el) => (layersRef.current[4] = el)}
         src={bgImage[0]}
-        className="z-10 layer absolute size-32 top-[11rem] left-1/2 -translate-x-1/2"
+        className="layer absolute size-32 top-[11rem] left-1/2 -translate-x-1/2 z-50"
       />
       <img
         ref={(el) => (layersRef.current[5] = el)}
         src={bgImage[1]}
-        className="z-10 layer absolute size-32 top-[20rem] left-1/2 -translate-x-1/2"
+        className="layer absolute size-32 top-[20rem] left-1/2 -translate-x-1/2 z-50"
       />
       <img
         ref={(el) => (layersRef.current[6] = el)}
@@ -292,7 +292,7 @@ const Homepage = ({ changeBgColor }) => {
       </div>
       <div
         ref={iphoneRef}
-        className="absolute h-[39.25rem] w-[19rem] bg-cover overflow-hidden scrollbar-hide p-5"
+        className="absolute h-[39.25rem] w-[19rem] bg-cover overflow-hidden scrollbar-hide p-5 z-40"
         style={{ backgroundImage: "url('/iphoneCropped.png')" }}
       >
         <div className="overflow-hidden h-full w-full">

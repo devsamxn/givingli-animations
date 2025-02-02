@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import PhoneSlider from "../pages-help/PhoneSlider";
-import iphoneCropped from "/iphoneCropped.png";
+// import iphoneCropped from "../assets/iphoneCropped.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const Homepage = ({ changeBgColor }) => {
@@ -293,10 +293,9 @@ const Homepage = ({ changeBgColor }) => {
       </div>
       <div
         ref={iphoneRef}
-        className="absolute h-[39.25rem] w-[19rem] bg-cover overflow-hidden scrollbar-hide p-5"
+        className="absolute h-[39.25rem] w-[19rem] bg-cover overflow-hidden scrollbar-hide p-5 bg-[url('/iphoneCropped.png')]"
         // style={{ backgroundImage: "url('/iphoneCropped.png')" }}
-        style={{ backgroundImage: `url(${iphoneCropped})` }}
-        S
+        // style={{ backgroundImage: `url(${iphoneCropped})` }}
       >
         <div className="overflow-hidden h-full w-full">
           <div className="absolute h-[70%] w-[80%] top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/2 gap-2 ">

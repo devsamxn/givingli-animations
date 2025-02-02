@@ -292,7 +292,7 @@ const Homepage = ({ changeBgColor }) => {
       </div>
       <div
         ref={iphoneRef}
-        className="absolute h-[39.25rem] w-[19rem] bg-cover overflow-hidden scrollbar-hide p-5 z-50"
+        className="absolute h-[39.25rem] w-[19rem] bg-cover overflow-hidden scrollbar-hide p-5"
         style={{ backgroundImage: "url('/iphoneCropped.png')" }}
       >
         <div className="overflow-hidden h-full w-full">

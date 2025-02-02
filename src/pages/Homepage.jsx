@@ -292,15 +292,17 @@ const Homepage = ({ changeBgColor }) => {
       </div>
       <div
         ref={iphoneRef}
-        className="absolute bg-[url('iphone.png')] h-[38rem] w-[19rem] bg-cover overflow-hidden"
+        className="absolute bg-[url('iphoneCropped.png')] h-[39.25rem] w-[19rem] bg-cover overflow-hidden scrollbar-hide p-5"
       >
-        <div className="absolute h-[70%] w-[80%] top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/2 gap-2">
-          <PhoneSlider
-            handleBgChange={handleBgChange}
-            changeBgColor={changeBgColor}
-          />
+        <div className="overflow-hidden h-full w-full">
+          <div className="absolute h-[70%] w-[80%] top-1/2 -translate-y-1/2 transform left-1/2 -translate-x-1/2 gap-2 ">
+            <PhoneSlider
+              handleBgChange={handleBgChange}
+              changeBgColor={changeBgColor}
+            />
+          </div>
+          {/* <div className="absolute bottom-6 h-[3.5rem] w-[82%] bg-black rounded-[2rem] left-1/2 -translate-x-1/2" /> */}
         </div>
-        {/* <div className="absolute bottom-6 h-[3.5rem] w-[82%] bg-black rounded-[2rem] left-1/2 -translate-x-1/2" /> */}
       </div>
     </div>
   );

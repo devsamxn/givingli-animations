@@ -3,3 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 /* @layer base {} */
+.custom-scroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari */
+}
